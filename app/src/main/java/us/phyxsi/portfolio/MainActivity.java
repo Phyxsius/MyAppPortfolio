@@ -39,32 +39,12 @@ public class MainActivity extends Activity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void buttonStreamerClick(View view) {
-        displayToast("This button will launch my spotify streamer app!");
-    }
+    public void displayToast(View view) {
+        Button button = (Button) view;
+        String buttonText = (String) button.getText();
 
-    public void buttonScoreAppClick(View view) {
-        displayToast("This button will launch my scores app!");
-    }
-
-    public void buttonLibraryAppClick(View view) {
-        displayToast("This button will launch my library app!");
-    }
-
-    public void buttonBuildItClick(View view) {
-        displayToast("This button will launch my build it bigger app!");
-    }
-
-    public void buttonXyzReaderClick(View view) {
-        displayToast("This button will launch my xyz reader app!");
-    }
-
-    public void buttonCapstoneClick(View view) {
-        displayToast("This button will launch my capstone app!");
-    }
-
-    public void displayToast(String text) {
         Context context = getApplicationContext();
+        CharSequence text = getString(R.string.open_app) + buttonText;
         int duration = Toast.LENGTH_SHORT;
 
         Toast toast = Toast.makeText(context, text, duration);
